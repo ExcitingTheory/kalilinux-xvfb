@@ -22,12 +22,12 @@ The same as the TorBrowser image, but with root access.
 
 Use docker to build locally
 ```
-docker build . -t excitingtheory/kalilinux-ui 
+docker build . -t excitingtheory/kalilinux-xvfb 
 ```
 
 Use docker to run, doesn't need to be built locally
 ```
-docker run -it -p 5901:5901 excitingtheory/kalilinux-ui /bin/bash
+docker run -it -p 5901:5901 excitingtheory/kalilinux-xvfb /bin/bash
 ```
 
 ### Building the other images
@@ -35,8 +35,8 @@ docker run -it -p 5901:5901 excitingtheory/kalilinux-ui /bin/bash
 Use docker to build locally
 
 ```
-docker build . -f ./TorBrowser.Dockerfile -t excitingtheory/kalilinux-ui-torbrowser
-docker build . -f ./TorBrowser-root.Dockerfile -t excitingtheory/kalilinux-ui-torbrowser-root
+docker build . -f ./TorBrowser.Dockerfile -t excitingtheory/kalilinux-xvfb-torbrowser
+docker build . -f ./TorBrowser-root.Dockerfile -t excitingtheory/kalilinux-xvfb-torbrowser-root
 ```
 
 ## Use VNC
