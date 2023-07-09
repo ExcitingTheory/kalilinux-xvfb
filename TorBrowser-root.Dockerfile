@@ -1,4 +1,4 @@
-FROM excitingtheory/kalilinux-ui
+FROM excitingtheory/kalilinux-xvfb
 ARG DISPLAY_NUMBER=1
 
 ENV DISPLAY=:$DISPLAY_NUMBER
