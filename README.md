@@ -35,8 +35,8 @@ docker run -it -p 5901:5901 excitingtheory/kalilinux-xvfb /bin/bash
 Use docker to build locally
 
 ```
-docker build . -f ./TorBrowser.Dockerfile -t excitingtheory/kalilinux-xvfb-torbrowser
-docker build . -f ./TorBrowser-root.Dockerfile -t excitingtheory/kalilinux-xvfb-torbrowser-root
+docker build . -f ./TorBrowser.Dockerfile -t excitingtheory/kalilinux-xvfb:torbrowser
+docker build . -f ./TorBrowser-root.Dockerfile -t excitingtheory/kalilinux-xvfb:torbrowser-root
 ```
 
 ## Use VNC
@@ -45,15 +45,40 @@ This image comes with a vnc user
 
 ### Start the VNC server
 
-You will be prompted to set a password. The password is `guestpas` in the examples below.
+Start the container with the following command.
 
 ```
-vncserver -geometry 1280x800 -depth 24
+docker run -it -p 5901:5901 excitingtheory/kalilinux-xvfb:torbrowser
 ```
+
+
+Run `/opt/start-vnc-server.sh `.
+
+You will be prompted to set a password. The password is `guestpas` in the examples below.
+
+``` bash
+/opt/start-vnc-server.sh 
+
+# You will require a password to access your desktops.
+
+# Password: 
+# Verify:   
+# Would you like to enter a view-only password (y/n)? n
+# xauth:  file /home/username/.Xauthority does not exist
+
+# New 'X' desktop is 466129c49ea6:1
+
+# Creating default startup script /home/username/.vnc/xstartup
+# Starting applications specified in /home/username/.vnc/xstartup
+# Log file is /home/username/.vnc/466129c49ea6:1.log
+```
+
 
 ### On macOS
 
-`cmd-k` will open the "Connect to Server Dialog" enter `vnc://localhost:5901` and the password `guestpas` when prompted. Dialog can also be found in the finder menu: Go -> Connect to Server
+With Finder open as the main app. Press `cmd-k` the "Connect to Server Dialog" will open. Enter `vnc://localhost:5901` and the password `guestpas` when prompted.
+
+Dialog can also be found in the finder menu: Go -> Connect to Server
 
 ### On Windows
 
