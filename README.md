@@ -1,6 +1,6 @@
 # kalilinux-xvfb
 
-These allow us to use Kali Linux in Docker networks with a GUI/SSH/VNC Server. The containers are all published as in Docker Hub as part of the Actions here, and the Dockerfiles are included here in the hopes other security researchers will find them useful. 
+These allow us to use Kali Linux in Docker networks with a GUI/SSH/VNC Server. The containers are all published in Docker Hub as part of GitHub Actions in this repo, and the Dockerfiles are included here in the hopes other security researchers will find them useful. 
 
 The idea was to bring all the goodness of Kali Linux to a headless environment. The images are based on the official Kali Linux docker images. The images are intended to be used as a base image for other images, or as a standalone image.
 
