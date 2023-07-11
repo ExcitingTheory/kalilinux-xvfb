@@ -1,24 +1,22 @@
 # kalilinux-xvfb
 
-Dockerfile for Kali Linux running with Virtual Frame buffer and a VNC server.
+These allow us to use Kali Linux in Docker networks with a GUI/SSH/VNC Server. The containers are all published as in Docker Hub as part of the Actions here, and the Dockerfiles are included here in the hopes other security researchers will find them useful. 
 
-## Overview of the images
+The idea was to bring all the goodness of Kali Linux to a headless environment. The images are based on the official Kali Linux docker images. The images are intended to be used as a base image for other images, or as a standalone image.
 
-The idea was to bring all the goodness of Kali Linux to a headless environment. The images are based on the official Kali Linux docker images. The images are intended to be used as a base image for other images, or as a standalone image for headless use. The containers are all published as in Docker Hub and the Dockerfiles are included here in the hopes other security researchers will find them useful.
-
-### Base image
+## Base image
 
 The base image is a headless kali linux with a virtual frame buffer and a VNC server. It is intended to be used as a base image for other images, or as a standalone image for headless use. The VNC server is exposed on port `5901`.
 
-### TorBrowser image
+## TorBrowser image
 
 The TorBrowser image is a headless kali linux with a virtual frame buffer, a VNC server, and TorBrowser. It is intended to be used as an image for a selenium runner heavily customized firefox profile to support TOR. See the TorDriver project for more information.
 
-### TorBrowser-root image
+## TorBrowser-root image
 
 The same as the TorBrowser image, but with root access.
 
-## Building the base image
+## Building the images
 
 Use docker to build locally
 ```
@@ -39,7 +37,7 @@ docker build . -f ./TorBrowser.Dockerfile -t excitingtheory/kalilinux-xvfb:torbr
 docker build . -f ./TorBrowser-root.Dockerfile -t excitingtheory/kalilinux-xvfb:torbrowser-root
 ```
 
-## Use VNC
+## Using VNC
 
 This image comes with a vnc user
 
