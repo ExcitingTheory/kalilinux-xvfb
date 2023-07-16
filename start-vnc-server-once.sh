@@ -7,11 +7,10 @@ else
 
     #if the USER env exists then use it, otherwise use root
     if [[ -f "$USER" ]]; then
-        pass
+        vncserver -geometry 1920x1080 -depth 24
     else
-        USER="root"
+        USER="root" vncserver -geometry 1920x1080 -depth 24
     fi
 
-    vncserver -geometry 1920x1080 -depth 24
     echo $? > $FILE
 fi
